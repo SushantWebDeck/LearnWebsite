@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"content ="width=device-width">
+		<meta name="description" content="Affortable Web Design And Maintenance">
+		<meta n <h111ame="keywords" content="web design ,Affortable">
+		<title>Acme Web Design| Welcome </title>
+		<link rel="stylesheet" type="text/css" href="./style.css">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div id="branding">
+					<h1><a class="gohome" href="index.html"><span class="highlight">Acme</span> Web Design</a></h1>
+				</div>
+				<nav>
+					<ul>
+						<li class="selected"><a href="index.html">HOME</a></li>
+						<li><a href="About.html">ABOUT</a></li>
+						<li><a href="Services.html">SERVICES</a></li>
+				    </ul>
+				</nav>
+
+			</div>
+
+		</header>
+
+		<section>
+			<div class="slideContainer">
+				<div class="Slide">
+				<img src="./img/showcase.jpg" />
+				<div class="Caption">Photo 1</div>
+				</div>
+				<div class="Slide">
+				<img src="./img/showcase.jpg" />
+				<div class="Caption">Photo 2</div>
+				</div>
+				<div class="Slide">
+				<img src="./img/showcase.jpg" />
+				<div class="Caption">Photo 3</div>
+				</div>
+				<a class="prevBtn">&#10094;</a>
+				<a class="nextBtn">&#10095;</a>
+				</div>
+				<br />
+				<div style="text-align:center">
+				<span class="Navdot" onclick="currentSlide(1)"></span>
+				<span class="Navdot" onclick="currentSlide(2)"></span>
+				<span class="Navdot" onclick="currentSlide(3)"></span>
+				</div>
+		</section>
+		<section>
+			<div class="container">
+				<div id="boxes">
+					<div class="box" ">
+						<img src="./img/logo_html.png" alt="icon">
+						<h2>HTML5 Markup</h2>
+					    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+					<div class="box">
+						<img src="./img/logo_css.png" alt="icon2">
+						<h2>CSS styling</h2>
+					    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+					<div class="box">
+						<img src="./img/logo_brush.png" alt="icon3">
+						<h2>Graphic Design</h2>
+					    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+					<div class="box">
+						<img src="./img/logo_brush.png" alt="icon3">
+						<h2>Graphic Design</h2>
+					    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+				</div>
+			</div>	
+		</section>
+		<section id="newsletter">
+			<div class="container mobContainer">
+				<div id="tabs">
+					<div class="tab showSingle" target="1">
+						<h3 class="cool-link">Pivot 1</h3>
+					</div>
+					<div class="tab showSingle" target="2">
+						<h3 class="cool-link">Pivot 2</h3>
+					</div>
+					<div class="tab showSingle" target="3">
+						<h3 class="cool-link">Pivot 3</h3>
+					</div>
+				</div>
+				<div id="div1" class="boxesSection2 targetDiv">
+					<div class="boxSection2" ">
+						<img src="./img/logo_html.png" alt="icon">
+					</div>
+					<div class="boxSection2" ">
+						<h3>HTML5 Markup</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+				</div>
+				<div id="div2" class="boxesSection2 targetDiv">
+					<div class="boxSection2" ">
+						<h3>HTML5 Markup</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+					<div class="boxSection2" ">
+						<img src="./img/logo_css.png" alt="icon">
+					</div>
+				</div>
+				<div id="div3" class="boxesSection2 targetDiv">
+					<div class="boxSection2" ">
+						<img src="./img/logo_brush.png" alt="icon">
+					</div>
+					<div class="boxSection2" ">
+						<h3>HTML5 Markup</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div id="boxes">
+					<div class="box" ">
+						<img src="./img/logo_html.png" alt="icon">
+					</div>
+					<div class="box">
+						<img src="./img/logo_css.png" alt="icon2">
+					</div>
+					<div class="box">
+						<img src="./img/logo_brush.png" alt="icon3">
+					</div>
+					<div class="box">
+						<img src="./img/logo_brush.png" alt="icon3">
+					</div>
+				</div>
+			</div>	
+		</section>
+		<footer>
+			<h3>Acme Web Design, Copyright &copy; 2018</h3>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+			jQuery(function(){
+        jQuery('.showSingle').click(function(){
+              jQuery('.targetDiv').hide();
+              jQuery('#div'+jQuery(this).attr('target')).show();
+        });
+});
+		</script>
+		<script>
+			document.querySelector(".prevBtn").addEventListener("click", () => {
+			changeSlides(-1);
+			});
+			document.querySelector(".nextBtn").addEventListener("click", () => {
+			changeSlides(1);
+			});
+			var slideIndex = 1;
+			showSlides(slideIndex);
+			function changeSlides(n) {
+			showSlides((slideIndex += n));
+			}
+			function currentSlide(n) {
+			showSlides((slideIndex = n));
+			}
+			function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("Slide");
+			var dots = document.getElementsByClassName("Navdot");
+			if (n > slides.length) {
+			slideIndex = 1;
+			}
+			if (n < 1) {
+			slideIndex = slides.length;
+			}
+			Array.from(slides).forEach(item => (item.style.display = "none"));
+			Array.from(dots).forEach(
+			item => (item.className = item.className.replace(" selected", ""))
+			);
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " selected";
+			}
+			</script>
+	</body>
+</html>
